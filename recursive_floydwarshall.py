@@ -24,6 +24,3 @@ def floydwarshall_recursive(matrix):
                     continue
                 distance[start][end] = shortest_path(start, end, inter)
     return distance
-
-my_matrix = [[0, 3, INF, 5],[2, 0, INF, 4],[INF, 1, 0, INF],[INF, INF, 2, 0]]
-print(floydwarshall_recursive(my_matrix))
