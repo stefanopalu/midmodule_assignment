@@ -7,13 +7,13 @@ In this project we created a new version of the Floyd Warshall algorithm that us
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the program.
 
 ```bash
-pip install floydwarshall
+pip install recursive_floydwarshall
 ```
 
 ## Usage
 
 ```python
-import floydwarshall
+import recursive_floydwarshall
 
 
 ```
