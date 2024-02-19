@@ -1,19 +1,21 @@
 """compare performance of the two algorythms"""
 
 import timeit
-from recursive_floydwarshall import floydwarshall_recursive
-from floydwarshall_alg import floydWarshall
+from floydwarshall.recursive_floydwarshall import floydwarshall_recursive
+from floydwarshall.imperative_floydwarshall import floydwarshall_imperative
 
 INF = 99999
 
-my_matrix = [[0, 3, INF, 5],[2, 0, INF, 4],[INF, 1, 0, INF],[INF, INF, 2, 0]]
+graph = [[0, 5, INF, 10],
+             [INF, 0, 3, INF],
+             [INF, INF, 0,   1],
+             [INF, INF, INF, 0]
+             ]
 
 
-recstart = timeit.default_timer()
-print("The start time is :", recstart)
-floydwarshall_recursive(my_matrix)
-print("The difference of time is :", timeit.default_timer() - recstart)
-start = timeit.default_timer()
-print("The start time is :", start)
-floydWarshall(my_matrix)
-print("The difference of time is :", timeit.default_timer() - start)
+rec_start = timeit.default_timer()
+floydwarshall_recursive(graph)
+print("Recursive function time difference is :", timeit.default_timer() - rec_start)
+imp_start = timeit.default_timer()
+floydwarshall_imperative(graph)
+print("Imperative function time difference is :", timeit.default_timer() - imp_start)

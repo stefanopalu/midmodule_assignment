@@ -2,13 +2,13 @@
 
 INF = 99999
 
-def floydwarshall_recursive(matrix):
+def floydwarshall_recursive(graph):
     """main function that uses the recursive function"""
-    v = len(matrix)
-    distance = [i for i in matrix]
+    v = len(graph)
+    distance = list(map(lambda i: list(map(lambda j: j, i)), graph))
 
     def shortest_path(start, end, inter):
-        """recursive function that calculates the shortest path"""
+        """nested recursive function that calculates the shortest path"""
         if inter >= 0:
             start_end = shortest_path(start, end, inter - v)
             start_inter = shortest_path(start, inter, inter - v)
@@ -23,4 +23,5 @@ def floydwarshall_recursive(matrix):
                 if start == end or start == inter or end == inter:
                     continue
                 distance[start][end] = shortest_path(start, end, inter)
+    
     return distance
