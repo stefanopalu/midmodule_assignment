@@ -3,7 +3,7 @@
 INF = 99999
 
 def floydwarshall_recursive(graph):
-    """main function that uses the recursive function"""
+    """enclosing function that uses the recursive function"""
     v = len(graph)
     distance = list(map(lambda i: list(map(lambda j: j, i)), graph))
 
@@ -23,5 +23,4 @@ def floydwarshall_recursive(graph):
                 if start == end or start == inter or end == inter:
                     continue
                 distance[start][end] = shortest_path(start, end, inter)
-    
     return distance
