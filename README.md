@@ -50,6 +50,7 @@ print(distances)
 
 The directory structure of this project is organized as follows:
 
+```
 midmodule_assignment/
 ├─── LICENSE
 ├─── README.md
@@ -61,7 +62,7 @@ midmodule_assignment/
     ├─── imperative_floydwarshall.py
     ├─── recursive_floydwarshall.py
     ├─── randomgraph_generator.py
-
+```
 
 ## Testing 
 
@@ -69,14 +70,12 @@ This project includes unit tests to verify the correctness of the Floyd-Warshall
 
 ```
 python -m unittest unit_test.py
-
 ```
 
 Additionally, performance tests are available to evaluate the efficiency of the implementations:
 
 ```
 python performance_test.py
-
 ```
 
 ## Contributing

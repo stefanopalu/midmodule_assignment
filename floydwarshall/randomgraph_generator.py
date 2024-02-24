@@ -4,12 +4,14 @@ import random
 
 INF = 99999
 
-def generate_graph():
+def generate_graph(vertex_n, inf_percentage):
     """function to create a random graph"""    
     # generate a random number of vertices between 2 and 10
-    vertex_n = random.randint(3,100)
+    if vertex_n < 3:
+        raise ValueError ("The number of vertexes must be greater than 3")
     # establish a percentage of values that will be inf
-    inf_percentage = random.randint(0,100)
+    if inf_percentage < 0 or inf_percentage > 100:
+        raise ValueError ("The percentage of INF values must be bewtween 0 and 100")
     # calculate how many values will be numbers
     n_numbers = int(vertex_n**2 * (inf_percentage/100))
 

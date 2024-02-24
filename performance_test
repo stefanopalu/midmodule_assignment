@@ -3,16 +3,12 @@
 import timeit
 from floydwarshall.recursive_floydwarshall import floydwarshall_recursive
 from floydwarshall.imperative_floydwarshall import floydwarshall_imperative
+from floydwarshall.randomgraph_generator import generate_graph
 
-INF = 99999
+graph = generate_graph()
 
-graph = [[0, 5, INF, 10],
-             [INF, 0, 3, INF],
-             [INF, INF, 0,   1],
-             [INF, INF, INF, 0]
-             ]
-
-
+# measure the start time, execute the function and calculate the difference
+# between the two values for each function
 rec_start = timeit.default_timer()
 floydwarshall_recursive(graph)
 print("Recursive function time difference is :", timeit.default_timer() - rec_start)
