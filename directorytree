@@ -7,5 +7,5 @@ midmodule_assignment/
     ├─── imperative_floydwashall.py
     ├─── recursive_floydwashall.py
     ├─── randomgraph_generator.py
-├─── performance_test.py
+├─── performance_tests.py
 ├─── unit_test.py
