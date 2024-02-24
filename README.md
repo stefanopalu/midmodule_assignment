@@ -1,6 +1,6 @@
 # Recursive Floyd Warshall algorithm
 
-In this project we created a new version of the Floyd Warshall algorithm that uses recursion
+In this project we created a new version of the Floyd Warshall algorithm that uses recursion. We also created a function that create random graph to use in the unit and performance tests.
 
 ## Table of Contents
 
@@ -66,13 +66,16 @@ midmodule_assignment/
 
 ## Testing 
 
-This project includes unit tests to verify the correctness of the Floyd-Warshall algorithm implementations. You can run the tests using the following command:
+This project includes a suite of unit tests to verify the correctness of the recursive version of the Floyd-Warshall algorithm. The unit tests cover various scenarios and edge cases to ensure the algorithms produce accurate results under different conditions. These tests compare the outputs of the implementations with the expected results, using the imperative version of the algorithm as a benchmark for correctness.
+You can run the tests using the following command:
 
 ```
 python -m unittest unit_test.py
 ```
 
-Additionally, performance tests are available to evaluate the efficiency of the implementations:
+In addition to unit tests, performance tests are available to evaluate the efficiency of the implementations.
+
+You can run the performance tests using the following command:
 
 ```
 python performance_test.py

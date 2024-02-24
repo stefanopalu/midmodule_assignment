@@ -4,31 +4,31 @@ import random
 
 INF = 99999
 
-def generate_graph(vertex_n, inf_percentage):
-    """function to create a random graph"""    
-    # generate a random number of vertices between 2 and 10
-    if vertex_n < 3:
+def generate_graph(vertex_num, inf_percentage):
+    """Function to create a random graph"""    
+    # Handling errors in vertex number and inf values percentage
+    if vertex_num < 3:
         raise ValueError ("The number of vertexes must be greater than 3")
-    # establish a percentage of values that will be inf
     if inf_percentage < 0 or inf_percentage > 100:
         raise ValueError ("The percentage of INF values must be bewtween 0 and 100")
-    # calculate how many values will be numbers
-    n_numbers = int(vertex_n**2 * (inf_percentage/100))
 
-    # generate random distances and inf_values and combine the two lists
-    distances = [random.randint(1,1000) for _ in range(n_numbers)]
-    inf_distances = [INF] * (vertex_n**2 - n_numbers)
+    # Calculate how many values will be numbers
+    numbers_num = int(vertex_num**2 * (inf_percentage/100))
+
+    # Generate random distances and inf_values and combine the two lists
+    distances = [random.randint(1,1000) for _ in range(numbers_num)]
+    inf_distances = [INF] * (vertex_num**2 - numbers_num)
     all_distances = distances + inf_distances
 
-    # shuffle the combined list
+    # Shuffle the combined list
     random.shuffle(all_distances)
 
-    # create a weighted distance graph from the shuffled combined list
-    # if i and j have the same value it will be set to zero (the distance of a vertex to itself)
-    graph = [[INF] * vertex_n for _ in range(vertex_n)]
+    # Create a weighted distance graph from the shuffled combined list
+    # If row and col have the same value it will be set to zero (the distance of a vertex to itself)
+    graph = [[INF] * vertex_num for _ in range(vertex_num)]
     index = 0
-    for row in range(vertex_n):
-        for col in range(vertex_n):
+    for row in range(vertex_num):
+        for col in range(vertex_num):
             if row != col:
                 graph[row][col] = all_distances[index]
                 index += 1
